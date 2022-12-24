@@ -6,6 +6,7 @@ function Scoreboard(options) {
   this._message = options.message || '';
   this._score = options.score || 0;
   this._location = options.location || 'topright';
+  this._div = options.div || document.body;
 
   if (options.onTimeExpired) {
     this._countdown = new __Countdown({
@@ -318,7 +319,7 @@ Scoreboard.prototype.ensureDom = function() {
     if (event.keyCode == 47) that.toggleHelp();
   });
 
-  document.body.appendChild(el);
+  this._div.appendChild(el);
 };
 
 Scoreboard.prototype.position = function() {
