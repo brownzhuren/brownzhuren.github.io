@@ -255,7 +255,7 @@ Scoreboard.prototype.ensureDom = function() {
 
   var el = this.el = document.createElement('div');
   el.id = 'scoreboard';
-  el.style.position = 'absolute';
+  el.style.position = 'relative';
   el.style.backgroundColor = 'black';
   el.style.opacity = 0.7;
   el.style.borderRadius = "5px";
