@@ -126,10 +126,6 @@ Scoreboard.prototype.getScore = function() {
 
 Scoreboard.prototype.score = Scoreboard.prototype.setScore;
 
-Scoreboard.prorotype.getEl = function() {
-  return this.el;
-};
-
 Scoreboard.prototype.addPoints = function(points) {
   this.setScore(this._score + points);
 };
