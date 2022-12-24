@@ -6,7 +6,6 @@ function Scoreboard(options) {
   this._message = options.message || '';
   this._score = options.score || 0;
   this._location = options.location || 'topright';
-  this._div = options.div || document.body;
 
   if (options.onTimeExpired) {
     this._countdown = new __Countdown({
@@ -126,6 +125,10 @@ Scoreboard.prototype.getScore = function() {
 };
 
 Scoreboard.prototype.score = Scoreboard.prototype.setScore;
+
+Scoreboard.prorotype.getEl = function() {
+  return this.el;
+};
 
 Scoreboard.prototype.addPoints = function(points) {
   this.setScore(this._score + points);
@@ -318,8 +321,6 @@ Scoreboard.prototype.ensureDom = function() {
     if (event.keyCode == 63) that.toggleHelp();
     if (event.keyCode == 47) that.toggleHelp();
   });
-
-  this._div.appendChild(el);
 };
 
 Scoreboard.prototype.position = function() {
